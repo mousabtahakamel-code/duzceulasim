@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Düzce Ulaşım</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- LOGIN PANELİ -->
+<div id="loginDiv" class="panel">
+  <h2>Giriş Yap</h2>
+  <input type="text" id="username" placeholder="Kullanıcı Adı"><br>
+  <input type="password" id="password" placeholder="Şifre"><br>
+  <button id="loginBtn">Giriş</button>
+  <p id="loginMsg" class="errorMsg"></p>
+</div>
+
+<!-- OWNER PANELİ -->
+<div id="ownerPanel" class="panel" style="display:none;">
+  <h2>Owner Paneli</h2>
+  <h3>Hesap Yönetimi</h3>
+  <input type="text" id="newUser" placeholder="Kullanıcı Adı">
+  <input type="password" id="newPass" placeholder="Şifre">
+  <select id="newRole">
+    <option value="amir">Hareket Amir</option>
+    <option value="sofor">Şoför</option>
+  </select>
+  <button id="addUserBtn">Hesap Ekle</button>
+
+  <h3>Mesaj Gönder (Flow Up)</h3>
+  <textarea id="ownerMsg" placeholder="Mesajınızı yazın"></textarea><br>
+  <button id="sendMsgBtn">Mesaj Gönder</button>
+</div>
+
+<!-- HAREKET AMİR PANELİ -->
+<div id="amirPanel" class="panel" style="display:none;">
+  <h2>Hareket Amir Paneli</h2>
+
+  <label>Şoför Seç:</label>
+  <select id="soforSelect"></select><br><br>
+
+  <label>Hat Seç:</label>
+  <select id="hatSelect">
+    <option>1 - Üniversite Ring</option>
+    <option>30 - Bahçeşehir Ring</option>
+    <option>12 - Yeşiltepe - Otogar - Jandarma</option>
+    <option>25 - Sarayyeri - Otogar</option>
+    <option>26 - Akşemsettin - Otogar</option>
+    <option>46 - Mamure - Otogar</option>
+    <option>43 - Düzce Üniversitesi - Bahçeşehir</option>
+  </select><br><br>
+
+  <label>Araç Seç:</label>
+  <select id="aracSelect">
+    <option>Mavi Karsan Atak</option>
+    <option>Kırmızı Karsan Atak</option>
+    <option>TCV Karat</option>
+    <option>MAN Lions City G</option>
+    <option>Mercedes Conecto 2024</option>
+    <option>Otokar Sultan</option>
+    <option>BMC Procity TR</option>
+  </select><br><br>
+
+  <button id="assignBtn">Atamayı Yap</button>
+
+  <h3>Atamalar:</h3>
+  <div id="assignmentsList"></div>
+</div>
+
+<!-- ŞOFÖR PANELİ -->
+<div id="soforPanel" class="panel" style="display:none;">
+  <h2>Şoför Paneli</h2>
+  <div id="soforAtama"></div>
+  <button id="startTripBtn">Sefer Başlat</button>
+
+  <h3>Mesajlar:</h3>
+  <div id="soforMessages"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
